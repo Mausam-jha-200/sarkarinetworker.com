@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes | Sarkari Networker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../Componets/css/footer.css">
+<link rel="stylesheet" href="../../componets/css/navbar.css">
+<link rel="stylesheet" href="../../Componets/search/search.html">
+
+
+</head>
+<body>
+
+
+
+
+<div id="navbar"></div>
+
+<section class="hero">
+
+<h1>Study Notes</h1>
+
+<p>
+Download Free Notes, PDFs & Study Material
+</p>
+
+<div class="search-box">
+<input
+type="text"
+id="searchInput"
+placeholder="Search Notes...">
+</div>
+
+</section>
+
+
+ <section class="notes-grid">
+
+<div class="note-card" onclick="location.href='../../data/notes/notes-devied/first-years/index.html'">
+<div class="note-tag">B.Tech </div>
+<h3>B.Tech Computer Scince and Eng. Notes </h3>
+<p>Pages : 120</p>
+<p>Language : Hinglish ,English</p>
+<a href="#" class="note-btn">
+View 
+</a>
+</div>
+
+
+
+</section>
+<!-- <section class="notes-grid" id="notesContainer">
+</section>
+
+<div class="load-more-wrap">
+    <button id="loadMoreBtn">
+        Load More 
+    </button>
+</div> -->
+<div id="footer"></div>
+
+<script>
+fetch("../../componets/footer/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+  .catch(error => console.error("Footer Load Error:", error));
+</script>
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("input",()=>{
+
+const value =
+searchInput.value.toLowerCase();
+
+document
+.querySelectorAll(".note-card")
+.forEach(card=>{
+
+card.style.display =
+card.textContent
+.toLowerCase()
+.includes(value)
+? "block"
+: "none";
+
+});
+
+});
+</script>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* Scroll Animation */
+
+const cards=document.querySelectorAll('.card');
+
+window.addEventListener('scroll',()=>{
+
+cards.forEach(card=>{
+
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+card.style.opacity='1';
+card.style.transform='translateY(0)';
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity='0';
+card.style.transform='translateY(50px)';
+card.style.transition='0.6s';
+});
+
+</script>
+<script src="script.js"></script>
+
+<script>
+  
+
+
+fetch("../../componets/navbar/navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  })
+  .catch(error => console.error("Navbar Load Error:", error));
+
+
+</script>
+
+
+</body>
+</html>

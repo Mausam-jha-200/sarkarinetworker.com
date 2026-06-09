@@ -1,0 +1,213 @@
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:#fff;
+}
+
+
+
+.navbar{
+position:sticky;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.1);
+z-index:999;
+}
+
+.logo{
+font-size:1.6rem;
+font-weight:800;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-btn{
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:10px 20px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#60a5fa;
+}
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+.hero{
+padding:60px 20px;
+}
+
+.hero-card{
+max-width:1200px;
+margin:auto;
+background:#1e293b;
+padding:40px;
+border-radius:25px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 16px;
+background:#22c55e;
+border-radius:50px;
+margin-bottom:15px;
+}
+
+.hero h1{
+font-size:2.5rem;
+margin-bottom:15px;
+}
+
+.hero p{
+color:#cbd5e1;
+margin-bottom:25px;
+}
+
+.btn-group{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:12px 25px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+}
+
+.apply-btn{
+background:#2563eb;
+color:#fff;
+}
+
+.pdf-btn{
+background:#334155;
+color:#fff;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.section{
+background:#1e293b;
+padding:25px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.section h2{
+margin-bottom:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th,
+table td{
+padding:12px;
+border:1px solid #334155;
+text-align:left;
+}
+
+ul,ol{
+padding-left:25px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+background:#020617;
+margin-top:30px;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:1.8rem;
+}
+}
+
+
+
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:70px;
+right:20px;
+flex-direction:column;
+background:#111827;
+padding:20px;
+border-radius:15px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+.latest{
+grid-template-columns:1fr;
+}}
+

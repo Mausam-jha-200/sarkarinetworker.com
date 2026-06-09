@@ -1,0 +1,74 @@
+
+[{
+  "id": "btech-admission-2026",
+
+  "short-heading": "Admission Open 2026",
+  "admission-heading": "B.Tech Admission 2026",
+  "admission-detail": "Apply Online For Engineering Admission 2026",
+
+  "total-seats": "5000",
+  "course-duration": "4 Years",
+  "location": "India",
+  "last-date": "31 July 2026",
+
+  "university-name": "ABC University",
+  "course-name": "Bachelor of Technology",
+  "course-type": "Undergraduate",
+  "course-mode": "Regular",
+
+  "application-start": "01 May 2026",
+  "application-last-date": "31 July 2026",
+  "exam-date": "15 August 2026",
+  "result-date": "01 September 2026",
+
+  "general-fee": "₹1000",
+  "obc-fee": "₹800",
+  "sc-st-fee": "₹500",
+
+  "eligibility-1": "Passed 12th with Physics, Chemistry and Mathematics",
+  "eligibility-2": "Minimum 50% Marks",
+  "eligibility-3": "Recognized Board",
+  "eligibility-4": "Age as per University Rules",
+
+  "document-1": "Passport Size Photo",
+  "document-2": "Signature",
+  "document-3": "Class 10 Marksheet",
+  "document-4": "Class 12 Marksheet",
+  "document-5": "Aadhaar Card",
+
+  "admission-process-1": "Online Application",
+  "admission-process-2": "Entrance Examination",
+  "admission-process-3": "Counselling",
+  "admission-process-4": "Document Verification",
+
+  "exam-pattern-1": "Physics",
+  "exam-pattern-2": "Chemistry",
+  "exam-pattern-3": "Mathematics",
+  "exam-pattern-4": "General Aptitude",
+
+  "syllabus-1": "Physics",
+  "syllabus-2": "Chemistry",
+  "syllabus-3": "Mathematics",
+  "syllabus-4": "Reasoning",
+
+  "faq-one": "Who can apply?",
+  "faq-one-ans": "Candidates who passed 12th with PCM can apply.",
+
+  "faq-two": "Is entrance exam compulsory?",
+  "faq-two-ans": "Yes, admission is based on entrance exam.",
+
+  "faq-three": "What is the last date?",
+  "faq-three-ans": "31 July 2026.",
+
+  "related-admission-one": "MBA Admission 2026",
+  "related-admission-two": "BCA Admission 2026",
+  "related-admission-three": "B.Sc Admission 2026",
+
+  "apply-online": "https://example.com/apply",
+  "apply-online-link": "https://example.com/apply",
+
+  "official-website": "https://example.com",
+
+  "notification-link": "https://example.com/prospectus.pdf",
+  "notification-link-download": "https://example.com/prospectus.pdf"
+}]

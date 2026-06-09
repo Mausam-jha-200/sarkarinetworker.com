@@ -1,0 +1,29 @@
+[
+  {
+    "id":"ssc-math-notes",
+    "tag":"Math",
+    "title":"SSC Mathematics Notes PDF",
+    "pages":"120",
+    "language":"Hindi",
+    "pdf":"math.pdf",
+    "url":"../../data/notes/post.html"
+  },
+  {
+    "id":"reasoning-notes",
+    "tag":"Reasoning",
+    "title":"Reasoning Complete Notes",
+    "pages":"95",
+    "language":"Hindi",
+    "pdf":"reasoning.pdf",
+    "url":"../../data/notes/post.html?note=reasoning-notes"
+  },
+  {
+    "id":"gk-notes",
+    "tag":"GK",
+    "title":"General Knowledge Notes",
+    "pages":"140",
+    "language":"Hindi",
+    "pdf":"gk.pdf",
+    "url":"../../data/notes/post.html?note=gk-notes"
+  }
+]

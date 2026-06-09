@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "tag": "Web Development",
+    "title": "Frontend Developer Internship",
+    "duration": "3 Months",
+    "stipend": "₹10,000/Month",
+    "slug": "frontend-developer-internship-2026",
+    "url": "../../data/internship/post.html?internship=frontend-developer-internship-2026"
+  },
+  {
+    "id": 2,
+    "tag": "Backend Development",
+    "title": "Node.js Developer Internship",
+    "duration": "6 Months",
+    "stipend": "₹15,000/Month",
+    "slug": "nodejs-developer-internship-2026",
+    "url": "../../data/internship/post.html?internship=nodejs-developer-internship-2026"
+  },
+  {
+    "id": 3,
+    "tag": "UI/UX Design",
+    "title": "UI UX Designer Internship",
+    "duration": "4 Months",
+    "stipend": "₹12,000/Month",
+    "slug": "ui-ux-designer-internship-2026",
+    "url": "../../data/internship/post.html?internship=ui-ux-designer-internship-2026"
+  }
+]

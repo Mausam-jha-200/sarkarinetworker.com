@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | Sarkari Networker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#07111F;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+overflow-x:hidden;
+position:relative;
+}
+
+body::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#2563EB;
+filter:blur(200px);
+top:-150px;
+left:-150px;
+opacity:.35;
+}
+
+body::after{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#06B6D4;
+filter:blur(200px);
+bottom:-150px;
+right:-150px;
+opacity:.35;
+}
+
+.signup-card{
+width:100%;
+max-width:900px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:35px;
+overflow:hidden;
+display:grid;
+grid-template-columns:1fr 1.2fr;
+position:relative;
+z-index:1;
+}
+
+/* LEFT SIDE */
+
+.left-side{
+padding:50px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+background:rgba(255,255,255,.03);
+}
+
+.logo-box{
+width:90px;
+height:90px;
+border-radius:25px;
+background:linear-gradient(135deg,#2563EB,#06B6D4);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:35px;
+font-weight:800;
+color:white;
+margin-bottom:20px;
+}
+
+.left-side h1{
+font-size:38px;
+color:white;
+margin-bottom:10px;
+}
+
+.left-side h1 span{
+color:#60A5FA;
+}
+
+.left-side p{
+color:#CBD5E1;
+line-height:1.8;
+}
+
+/* RIGHT SIDE */
+
+.right-side{
+padding:50px;
+}
+
+.form-title{
+font-size:28px;
+font-weight:700;
+color:white;
+margin-bottom:25px;
+}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-bottom:15px;
+}
+
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group input{
+width:100%;
+height:58px;
+padding:0 18px;
+border:none;
+outline:none;
+border-radius:16px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+color:white;
+font-size:15px;
+}
+
+.input-group input::placeholder{
+color:#94A3B8;
+}
+
+/* MOBILE NUMBER */
+
+.phone-wrapper{
+display:flex;
+height:58px;
+border-radius:16px;
+overflow:hidden;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+}
+
+.country-code{
+padding:0 18px;
+display:flex;
+align-items:center;
+font-weight:600;
+color:white;
+border-right:1px solid rgba(255,255,255,.1);
+}
+
+.phone-wrapper input{
+flex:1;
+background:none;
+border:none;
+outline:none;
+padding:0 18px;
+color:white;
+}
+
+/* OTP */
+
+.otp-btn{
+width:100%;
+height:55px;
+margin-top:12px;
+border:none;
+border-radius:16px;
+background:linear-gradient(135deg,#2563EB,#06B6D4);
+color:white;
+font-weight:700;
+cursor:pointer;
+}
+
+.otp-boxes{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+gap:8px;
+}
+
+.otp-boxes input{
+width:55px;
+height:55px;
+text-align:center;
+font-size:18px;
+border:none;
+outline:none;
+border-radius:14px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+color:white;
+}
+
+/* BUTTON */
+
+.create-btn{
+width:100%;
+height:58px;
+margin-top:20px;
+border:none;
+border-radius:16px;
+background:linear-gradient(135deg,#2563EB,#06B6D4);
+color:white;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+}
+
+.login-link{
+text-align:center;
+margin-top:18px;
+color:#CBD5E1;
+}
+
+.login-link a{
+color:#60A5FA;
+text-decoration:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+.signup-card{
+grid-template-columns:1fr;
+}
+
+.left-side{
+display:none;
+}
+
+.right-side{
+padding:30px;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+.otp-boxes input{
+width:45px;
+height:45px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="signup-card">
+
+<div class="left-side">
+
+<div class="logo-box">SN</div>
+
+<h1>Sarkari <span>Networker</span></h1>
+
+<p>
+India's Smart Government Jobs Portal.
+Create your account and stay updated with Jobs,
+Results, Admit Cards and Admissions.
+</p>
+
+</div>
+
+<div class="right-side">
+
+<div class="form-title">
+Create Account
+</div>
+
+<form>
+
+<div class="row">
+
+<div class="input-group">
+<input type="text" placeholder="Full Name">
+</div>
+
+<div class="input-group">
+<input type="email" placeholder="Email Address">
+</div>
+
+</div>
+
+<div class="phone-wrapper">
+
+<div class="country-code">
+🇮🇳 +91
+</div>
+
+<input type="tel" placeholder="Mobile Number">
+
+</div>
+
+<button type="button" class="otp-btn">
+Send OTP
+</button>
+
+<div class="otp-boxes">
+
+<input maxlength="1">
+<input maxlength="1">
+<input maxlength="1">
+<input maxlength="1">
+<input maxlength="1">
+<input maxlength="1">
+
+</div>
+
+<div class="input-group" style="margin-top:15px;">
+<input type="password" placeholder="Password">
+</div>
+
+<div class="input-group">
+<input type="password" placeholder="Confirm Password">
+</div>
+
+<button class="create-btn">
+Create Account
+</button>
+
+<div class="login-link">
+Already have an account?
+<a href="../login/index.html">Login</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

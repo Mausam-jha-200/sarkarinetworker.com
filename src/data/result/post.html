@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result Details</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../Componets/css/footer.css">
+<link rel="stylesheet" href="../../componets/css/navbar.css">
+<link rel="stylesheet" href="../../Componets/css/search.css">
+</head>
+
+</head>
+
+<body>
+
+    
+
+<div id="navbar"></div> 
+
+<section class="hero">
+
+<div class="hero-card">
+
+<div class="badge" id="result-status">
+Result Released
+</div>
+
+<h1 id="result-heading">
+SSC CGL Tier I Result 2026
+</h1>
+
+<p id="result-short-detail">
+Download SSC CGL Result 2026
+</p>
+
+<div class="btn-group">
+
+<a href="#" id="result-link" class="btn apply-btn">
+Check Result
+</a>
+
+<a href="#" id="download-pdf" class="btn pdf-btn">
+Download PDF
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<div class="section">
+
+<h2>Important Information</h2>
+
+<table>
+<tr>
+<th>Organization</th>
+<td id="organization"></td>
+</tr>
+
+<tr>
+<th>Exam Name</th>
+<td id="exam-name"></td>
+</tr>
+
+<tr>
+<th>Post Name</th>
+<td id="post-name"></td>
+</tr>
+
+<tr>
+<th>Result Date</th>
+<td id="result-date"></td>
+</tr>
+
+<tr>
+<th>Status</th>
+<td id="status"></td>
+</tr>
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>How To Check Result</h2>
+
+<ol>
+<li id="step-one"></li>
+<li id="step-two"></li>
+<li id="step-three"></li>
+<li id="step-four"></li>
+<li id="step-five"></li>
+</ol>
+
+</div>
+
+<div class="section">
+
+<h2>Important Links</h2>
+
+<table>
+
+<tr>
+<th>Action</th>
+<th>Link</th>
+</tr>
+
+<tr>
+<td>Check Result</td>
+<td><a id="check-result">Click Here</a></td>
+</tr>
+
+<tr>
+<td>Official Website</td>
+<td><a id="official-website">Visit Website</a></td>
+</tr>
+
+<tr>
+<td>Notification</td>
+<td><a id="notification-link">Download</a></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>FAQ</h2>
+
+<h3 id="faq-one"></h3>
+<p id="faq-one-ans"></p>
+
+<h3 id="faq-two"></h3>
+<p id="faq-two-ans"></p>
+
+<h3 id="faq-three"></h3>
+<p id="faq-three-ans"></p>
+
+</div>
+
+</div>
+
+
+<div id="footer"></div>
+
+
+<script>
+  
+fetch("../../componets/footer/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+  .catch(error => console.error("Footer Load Error:", error));
+
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+
+</script>
+<script src="script.js"></script>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* Scroll Animation */
+
+const cards=document.querySelectorAll('.card');
+
+window.addEventListener('scroll',()=>{
+
+cards.forEach(card=>{
+
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+card.style.opacity='1';
+card.style.transform='translateY(0)';
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity='0';
+card.style.transform='translateY(50px)';
+card.style.transition='0.6s';
+});
+
+</script>
+<script>
+  
+
+
+fetch("../../componets/navbar/navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  })
+  .catch(error => console.error("Navbar Load Error:", error));
+
+
+</script>
+
+
+
+</body>
+</html>

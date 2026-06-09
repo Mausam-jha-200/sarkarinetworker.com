@@ -1,0 +1,35 @@
+
+[
+  {
+    "id": 1,
+    "tag": "SSC",
+    "title": "SSC CGL Result 2026",
+    "declared": "15 June 2026",
+    "slug": "ssc-cgl-tier-1-result-2026",
+    "url": "../../data/result/post.html?result=ssc-cgl-tier-1-result-2026"
+  },
+  {
+    "id": 2,
+    "tag": "Railway",
+    "title": "Railway Group D Result",
+    "declared": "20 June 2026",
+    "slug": "railway-group-d-result-2026",
+    "url": "../../data/result/post.html?result=railway-group-d-result-2026"
+  },
+  {
+    "id": 3,
+    "tag": "Police",
+    "title": "UP Police Result 2026",
+    "declared": "25 June 2026",
+    "slug": "up-police-result-2026",
+    "url": "../../data/result/post.html?result=up-police-result-2026"
+  },
+  {
+    "id": 4,
+    "tag": "Bank",
+    "title": "IBPS PO Result",
+    "declared": "28 June 2026",
+    "slug": "ibps-po-result-2026",
+    "url": "../../data/result/post.html?result=ibps-po-result-2026"
+  }
+]

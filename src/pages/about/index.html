@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Sarkari Networker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+
+.navbar{
+position:sticky;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.1);
+z-index:999;
+}
+
+.logo{
+font-size:1.6rem;
+font-weight:800;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+
+
+
+
+
+
+
+.nav-links a{
+    transition:all .3s ease;
+}
+
+.nav-links a:hover{
+    transform:translateY(-3px);
+}
+
+
+
+
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-btn{
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:10px 20px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#60a5fa;
+}
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.about-hero{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+background:
+linear-gradient(
+180deg,
+#000,
+#0f172a
+);
+
+overflow:hidden;
+}
+
+.about-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+background:#2563eb;
+
+filter:blur(250px);
+
+opacity:.15;
+
+top:-250px;
+left:50%;
+
+transform:translateX(-50%);
+}
+
+.about-hero *{
+position:relative;
+z-index:2;
+}
+
+.tag{
+
+background:#111827;
+
+padding:12px 25px;
+
+border-radius:999px;
+
+color:#60A5FA;
+
+font-weight:600;
+
+margin-bottom:30px;
+}
+
+.about-hero h1{
+
+font-size:clamp(3rem,8vw,6rem);
+
+font-weight:800;
+
+line-height:1.05;
+
+letter-spacing:-3px;
+
+max-width:1000px;
+
+margin-bottom:25px;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#60A5FA,
+#fff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.about-hero p{
+
+max-width:800px;
+
+font-size:1.3rem;
+
+line-height:1.8;
+
+color:#9CA3AF;
+}
+
+/* CONTAINER */
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:80px 20px;
+}
+
+/* CARD */
+
+.card{
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.05);
+
+padding:50px;
+
+border-radius:35px;
+
+margin-bottom:30px;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 60px rgba(37,99,235,.15);
+}
+
+.card h2{
+
+font-size:2.5rem;
+
+margin-bottom:20px;
+}
+
+.card p{
+
+color:#D1D5DB;
+
+line-height:1.9;
+
+font-size:1.05rem;
+}
+
+.card ul{
+
+padding-left:20px;
+}
+
+.card li{
+
+margin-bottom:12px;
+
+color:#D1D5DB;
+}
+
+/* STATS */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-bottom:30px;
+}
+
+.stat{
+
+background:#111827;
+
+padding:40px;
+
+border-radius:30px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.05);
+}
+
+.stat h3{
+
+font-size:3rem;
+
+color:#60A5FA;
+
+margin-bottom:10px;
+}
+
+.stat p{
+
+color:#9CA3AF;
+}
+
+/* CTA */
+
+.cta{
+
+text-align:center;
+
+padding:100px 20px;
+}
+
+.cta h2{
+
+font-size:3rem;
+
+margin-bottom:20px;
+}
+
+.cta p{
+
+color:#9CA3AF;
+
+margin-bottom:30px;
+}
+
+.cta a{
+
+display:inline-block;
+
+padding:15px 35px;
+
+background:#0071e3;
+
+color:#fff;
+
+text-decoration:none;
+
+border-radius:999px;
+
+font-weight:600;
+
+box-shadow:
+0 0 30px rgba(0,113,227,.4);
+
+transition:.3s;
+}
+
+.cta a:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 50px rgba(0,113,227,.8);
+}
+
+footer{
+
+padding:40px 20px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.05);
+
+color:#94A3B8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.about-hero h1{
+font-size:3rem;
+}
+
+.card{
+padding:30px;
+}
+
+.card h2{
+font-size:2rem;
+}
+
+.cta h2{
+font-size:2rem;
+}
+
+}
+
+
+
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:70px;
+right:20px;
+flex-direction:column;
+background:#111827;
+padding:20px;
+border-radius:15px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+.latest{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+
+<section class="about-hero">
+
+<div class="tag">
+About Sarkari Networker
+</div>
+
+<h1>
+Building India's Smart Government Job Platform
+</h1>
+
+<p>
+Sarkari Networker is dedicated to providing the latest government jobs,
+results, admit cards, admissions, internships and educational updates.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Who We Are</h2>
+
+<p>
+Sarkari Networker is an online platform designed for students,
+job seekers and competitive exam aspirants. We provide accurate
+and fast information about government jobs, results, admit cards,
+answer keys and admissions.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Our Mission</h2>
+
+<p>
+Our mission is to simplify access to government opportunities and
+educational updates by creating a fast, reliable and user-friendly platform.
+</p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>1000+</h3>
+<p>Job Updates</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Availability</p>
+</div>
+
+<div class="stat">
+<h3>Fast</h3>
+<p>Updates</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>What We Provide</h2>
+
+<ul>
+
+<li>Latest Government Jobs</li>
+
+<li>Admit Cards</li>
+
+<li>Results</li>
+
+<li>Answer Keys</li>
+
+<li>Admissions</li>
+
+<li>Scholarships</li>
+
+<li>Internships</li>
+
+<li>Exam Syllabus</li>
+
+<li>Important Notifications</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Founder</h2>
+
+<p>
+Sarkari Networker is founded and developed by
+<strong>Mausam Jha</strong> with the vision of building
+India's modern government job information platform.
+</p>
+
+</div>
+
+</div>
+
+<section class="cta">
+
+<h2>Join Sarkari Networker</h2>
+
+<p>
+Stay updated with the latest government jobs and career opportunities.
+</p>
+
+<a href="/">
+Explore Jobs
+</a>
+
+</section>
+
+
+<div id="footer"></div>
+
+<script>
+fetch("../../componets/footer/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+  .catch(error => console.error("Footer Load Error:", error));
+</script>
+
+    
+
+<script>
+  
+
+
+fetch("../../componets/navbar/navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  })
+  .catch(error => console.error("Navbar Load Error:", error));
+
+
+
+
+
+</script>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* Scroll Animation */
+
+const cards=document.querySelectorAll('.card');
+
+window.addEventListener('scroll',()=>{
+
+cards.forEach(card=>{
+
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+card.style.opacity='1';
+card.style.transform='translateY(0)';
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity='0';
+card.style.transform='translateY(50px)';
+card.style.transition='0.6s';
+});
+
+</script>
+<script src="script.js"></script>
+
+
+  
+
+</body>
+</html>

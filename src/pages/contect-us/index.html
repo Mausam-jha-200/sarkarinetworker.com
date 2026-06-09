@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Sarkari Networker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../Componets/css/footer.css">
+<link rel="stylesheet" href="../../componets/css/navbar.css">
+<link rel="stylesheet" href="../../Componets/css/search.css">
+</head>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+
+
+
+.navbar{
+position:sticky;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.1);
+z-index:999;
+}
+
+.logo{
+font-size:1.6rem;
+font-weight:800;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-btn{
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:10px 20px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#60a5fa;
+}
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+
+min-height:70vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+background:
+linear-gradient(
+180deg,
+#000,
+#0f172a
+);
+
+}
+
+.hero h1{
+
+font-size:clamp(3rem,8vw,6rem);
+
+font-weight:800;
+
+letter-spacing:-3px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#60A5FA,
+#fff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+max-width:700px;
+
+font-size:1.2rem;
+
+line-height:1.8;
+
+color:#94A3B8;
+}
+
+/* CONTAINER */
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:80px 20px;
+}
+
+/* CONTACT CARD */
+
+.contact-card{
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.05);
+
+border-radius:35px;
+
+padding:50px;
+
+margin-bottom:30px;
+}
+
+.contact-card h2{
+
+font-size:2rem;
+
+margin-bottom:20px;
+}
+
+.contact-card p{
+
+color:#CBD5E1;
+
+line-height:1.8;
+
+margin-bottom:15px;
+}
+
+/* FORM */
+
+.form-group{
+
+margin-bottom:20px;
+}
+
+input,
+textarea{
+
+width:100%;
+
+padding:18px;
+
+background:#1E293B;
+
+border:none;
+
+border-radius:15px;
+
+color:white;
+
+font-size:1rem;
+
+outline:none;
+}
+
+textarea{
+
+height:180px;
+
+resize:none;
+}
+
+button{
+
+background:#0071e3;
+
+color:white;
+
+border:none;
+
+padding:16px 35px;
+
+border-radius:999px;
+
+font-size:1rem;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+background:#0062cc;
+}
+
+/* INFO BOXES */
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+}
+
+.info-box{
+
+background:#111827;
+
+padding:30px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.05);
+}
+
+.info-box h3{
+
+margin-bottom:10px;
+
+color:#60A5FA;
+}
+
+.info-box p{
+
+color:#CBD5E1;
+}
+
+/* FOOTER */
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.05);
+
+color:#94A3B8;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.contact-card{
+padding:30px;
+}
+
+}
+
+
+
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:70px;
+right:20px;
+flex-direction:column;
+background:#111827;
+padding:20px;
+border-radius:15px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+.latest{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+     <div id="navbar"></div>
+
+<section class="hero">
+
+<h1>Contact Us</h1>
+
+<p>
+Have questions, suggestions, or business inquiries?
+Get in touch with Sarkari Networker.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="contact-card">
+
+<h2>Send Us a Message</h2>
+
+<form>
+
+<div class="form-group">
+<input type="text" placeholder="Your Name">
+</div>
+
+<div class="form-group">
+<input type="email" placeholder="Your Email">
+</div>
+
+<div class="form-group">
+<input type="text" placeholder="Subject">
+</div>
+
+<div class="form-group">
+<textarea placeholder="Write your message..."></textarea>
+</div>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<h3>Email</h3>
+
+<p>
+contact@sarkarinetworker.com
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>Website</h3>
+
+<p>
+www.sarkarinetworker.com
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>Support</h3>
+
+<p>
+Monday - Saturday
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="footer"></div>
+
+
+<script>
+  
+fetch("../../componets/footer/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+  .catch(error => console.error("Footer Load Error:", error));
+
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+
+</script>
+
+
+<script>
+  
+
+
+fetch("../../componets/navbar/navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  })
+  .catch(error => console.error("Navbar Load Error:", error));
+
+
+
+
+
+</script>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* Scroll Animation */
+
+const cards=document.querySelectorAll('.card');
+
+window.addEventListener('scroll',()=>{
+
+cards.forEach(card=>{
+
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+card.style.opacity='1';
+card.style.transform='translateY(0)';
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity='0';
+card.style.transform='translateY(50px)';
+card.style.transition='0.6s';
+});
+
+</script>
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

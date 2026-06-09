@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "tag": "SSC",
+    "title": "SSC CGL Admit Card 2026",
+    "examDate": "10 July 2026",
+    "status": "Available",
+    "slug": "ssc-cgl-admit-card-2026",
+    "url": "../../data/admitcard/post.html?admit=ssc-cgl-admit-card-2026"
+  },
+  {
+    "id": 2,
+    "tag": "Railway",
+    "title": "Railway Group D Admit Card",
+    "examDate": "15 July 2026",
+    "status": "Available",
+    "slug": "railway-group-d-admit-card-2026",
+    "url": "../../data/admitcard/post.html?admit=railway-group-d-admit-card-2026"
+  },
+  {
+    "id": 3,
+    "tag": "Police",
+    "title": "UP Police Admit Card 2026",
+    "examDate": "20 July 2026",
+    "status": "Available",
+    "slug": "up-police-admit-card-2026",
+    "url": "../../data/admitcard/post.html?admit=up-police-admit-card-2026"
+  }
+]

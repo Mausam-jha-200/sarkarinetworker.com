@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Answer Key Details | Sarkari Networker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../Componets/css/footer.css">
+<link rel="stylesheet" href="../../componets/css/navbar.css">
+<link rel="stylesheet" href="../../Componets/css/search.css">
+</head>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+   
+<!--     
+<nav class="navbar">
+
+<div class="logo">
+  
+    <span>Sarkari Networker</span>
+</div>
+
+<div class="nav-links" id="navLinks">
+    <a href="../../pages/home/index.html">Home</a>
+    <a href="../../pages/job/index.html">Jobs</a>
+    <a href="../../pages/result/index.html">Results</a>
+    <a href="../../pages/admit-card/index.html">Admit Card</a>
+    <a href="../../pages/answerkey/index.html">Answer Key</a>
+    <a href="../../pages/addmission/index.html">Admissions</a>
+    <a href="../../pages/notes/index.html">Notes</a>
+    <a href="../../pages/intership/index.html">Internship</a>
+</div>
+
+<div class="nav-right">
+
+    <a href="../../pages/login/index.html" class="login-btn">Login</a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+</div>
+</nav>
+<div class="logo">
+ <span></span>
+</div>
+</nav> -->
+
+
+
+
+
+
+
+<div id="navbar"></div> 
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-card">
+
+<div class="badge" id="answerkey-status">
+Answer Key Released
+</div>
+
+<h1 id="answerkey-heading">
+SSC CGL Answer Key 2026
+</h1>
+
+<p id="answerkey-short-detail">
+Download Official SSC CGL Answer Key 2026 and Raise Objection Online.
+</p>
+
+<div class="btn-group">
+
+<a href="#" id="answerkey-link"
+class="btn primary">
+
+Download Answer Key
+
+</a>
+
+<a href="#" id="objection-link"
+class="btn secondary">
+
+Raise Objection
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h3 id="organization">
+SSC
+</h3>
+
+<p>Organization</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="exam-date">
+Dec 2026
+</h3>
+
+<p>Exam Date</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="answerkey-date">
+Jan 2027
+</h3>
+
+<p>Answer Key Date</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="objection-date">
+05 Jan 2027
+</h3>
+
+<p>Objection Last Date</p>
+
+</div>
+
+</div>
+<!-- IMPORTANT LINKS -->
+
+<div class="section">
+
+<h2>Important Links</h2>
+
+<div class="links-grid">
+
+<div class="link-card">
+<h3>Download Answer Key</h3>
+<a href="#" id="answerkey-link-card">
+Click Here
+</a>
+</div>
+
+<div class="link-card">
+<h3>Question Paper</h3>
+<a href="#" id="question-paper-link">
+View Paper
+</a>
+</div>
+
+<div class="link-card">
+<h3>Raise Objection</h3>
+<a href="#" id="objection-link-card">
+Click Here
+</a>
+</div>
+
+<div class="link-card">
+<h3>Official Website</h3>
+<a href="#" id="official-website">
+Visit Website
+</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-box">
+
+<h3 id="faq-one">
+When was the Answer Key released?
+</h3>
+
+<p id="faq-one-ans">
+The Answer Key was released in January 2027.
+</p>
+
+</div>
+
+<div class="faq-box">
+
+<h3 id="faq-two">
+Can I raise objections?
+</h3>
+
+<p id="faq-two-ans">
+Yes, candidates can raise objections within the specified dates.
+</p>
+
+</div>
+
+<div class="faq-box">
+
+<h3 id="faq-three">
+Is there any objection fee?
+</h3>
+
+<p id="faq-three-ans">
+Yes, objection fees may apply according to official notification.
+</p>
+
+</div>
+
+</div>
+
+<!-- RELATED ANSWER KEYS -->
+
+<div class="section">
+
+<h2>Related Answer Keys</h2>
+
+<div class="related-grid">
+
+<a href="#" class="related-card">
+SSC CHSL Answer Key 2026
+</a>
+
+<a href="#" class="related-card">
+SSC MTS Answer Key 2026
+</a>
+
+<a href="#" class="related-card">
+Railway Group D Answer Key 2026
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+
+<div id="footer"></div>
+
+
+<script>
+  
+fetch("../../componets/footer/footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+  .catch(error => console.error("Footer Load Error:", error));
+
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+
+</script>
+
+
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* Scroll Animation */
+
+const cards=document.querySelectorAll('.card');
+
+window.addEventListener('scroll',()=>{
+
+cards.forEach(card=>{
+
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+card.style.opacity='1';
+card.style.transform='translateY(0)';
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity='0';
+card.style.transform='translateY(50px)';
+card.style.transition='0.6s';
+});
+
+</script>
+
+<script>
+  
+
+
+fetch("../../componets/navbar/navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  })
+  .catch(error => console.error("Navbar Load Error:", error));
+
+
+</script>
+
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
+

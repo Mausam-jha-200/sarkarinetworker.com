@@ -1,0 +1,465 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notes | Sarkari Networker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+}
+
+
+
+
+.navbar{
+position:sticky;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.1);
+z-index:999;
+}
+
+.logo{
+font-size:1.6rem;
+font-weight:800;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-btn{
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:10px 20px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#60a5fa;
+}
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+
+padding:120px 20px 80px;
+
+text-align:center;
+
+background:
+linear-gradient(
+180deg,
+#000,
+#0f172a
+);
+
+}
+
+.hero h1{
+
+font-size:clamp(3rem,8vw,5rem);
+
+font-weight:800;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#60A5FA,
+#fff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+color:#94A3B8;
+
+max-width:700px;
+
+margin:auto;
+}
+
+/* GRID */
+
+.notes-grid{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:60px 20px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+
+gap:25px;
+}
+
+/* CARD */
+
+.note-card{
+
+background:#111827;
+
+padding:25px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:.4s;
+}
+
+.note-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 50px rgba(37,99,235,.15);
+}
+
+.tag{
+
+display:inline-block;
+
+background:#2563eb;
+
+padding:7px 15px;
+
+border-radius:999px;
+
+font-size:.85rem;
+
+margin-bottom:15px;
+}
+
+.note-card h3{
+
+font-size:1.5rem;
+
+margin-bottom:10px;
+}
+
+.note-card p{
+
+color:#CBD5E1;
+
+line-height:1.8;
+
+margin-bottom:20px;
+}
+
+/* PDF BOX */
+
+.pdf-box{
+
+height:250px;
+
+background:#1E293B;
+
+border-radius:15px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#94A3B8;
+
+margin-bottom:20px;
+
+font-size:1.1rem;
+}
+
+/* BUTTONS */
+
+.btn-group{
+
+display:flex;
+
+gap:12px;
+
+flex-wrap:wrap;
+}
+
+.btn{
+
+padding:12px 22px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+}
+
+.view-btn{
+
+background:#1E293B;
+
+color:white;
+}
+
+.download-btn{
+
+background:#2563eb;                                                                                                                                                                                                                                      
+color:white;
+}
+
+.btn:hover{
+
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.05);
+
+color:#94A3B8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.notes-grid{
+
+grid-template-columns:1fr;
+}
+
+.hero h1{
+
+font-size:3rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+<section class="hero">
+
+<h1>Study Notes</h1>
+
+<p>
+Download B.Tech, Computer Science, Engineering and Competitive Exam Notes PDF.
+</p>
+
+</section>
+
+<section class="notes-grid">
+
+<div class="note-card">
+
+<span class="tag">
+B.Tech CSE
+</span>
+
+<h3>
+Computer Networks Notes
+</h3>
+
+<p>
+Complete Computer Networks Notes for B.Tech Computer Science Students.
+</p>
+
+<div class="pdf-box">
+📄 PDF Preview
+</div>
+
+<div class="btn-group">
+
+<a href="pdf/computer-network.pdf"
+target="_blank"
+class="btn view-btn">
+
+View More
+
+</a>
+
+<a href="pdf/computer-network.pdf"
+download
+class="btn download-btn">
+
+Download PDF
+
+</a>
+
+</div>
+
+</div>
+
+<div class="note-card">
+
+<span class="tag">
+B.Tech CSE
+</span>
+
+<h3>
+Data Structure Notes
+</h3>
+
+<p>
+Complete Data Structure & Algorithms Notes PDF.
+</p>
+
+<div class="pdf-box">
+📄 PDF Preview
+</div>
+
+<div class="btn-group">
+
+<a href="#"
+class="btn view-btn">
+
+View More
+
+</a>
+
+<a href="#"
+class="btn download-btn">
+
+Download PDF
+
+</a>
+
+</div>
+
+</div>
+
+<div class="note-card">
+
+<span class="tag">
+B.Tech CSE
+</span>
+
+<h3>
+Operating System Notes
+</h3>
+
+<p>
+Operating System Study Notes for Engineering Students.
+</p>
+
+<div class="pdf-box">
+📄 PDF Preview
+</div>
+
+<div class="btn-group">
+
+<a href="#"
+class="btn view-btn">
+
+View More
+
+</a>
+
+<a href="#"
+class="btn download-btn">
+
+Download PDF
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Sarkari Networker. All Rights Reserved.<br>
+Founder & Developer : <strong>Mausam Jha</strong>
+
+</footer>
+
+
+<script>
+  
+
+
+fetch("../../componets/navbar/navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  })
+  .catch(error => console.error("Navbar Load Error:", error));
+
+
+
+
+
+</script>
+
+</body>
+</html> .

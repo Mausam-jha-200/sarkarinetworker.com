@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "tag": "University",
+    "title": "CUET UG Admission 2026",
+    "qualification": "12th Pass",
+    "lastDate": "30 June 2026",
+    "slug": "cuet-ug-admission-2026",
+    "url": "../../data/admissions/post.html?admission=btech-admission-2026"
+  },
+  {
+    "id": 2,
+    "tag": "Engineering",
+    "title": "B.Tech Admission 2026",
+    "qualification": "12th PCM",
+    "lastDate": "15 July 2026",
+    "slug": "btech-admission-2026",
+    "url": "../../data/admissions/post.html?admission=btech-admission-2026"
+  },
+  {
+    "id": 3,
+    "tag": "Medical",
+    "title": "MBBS Admission 2026",
+    "qualification": "12th PCB",
+    "lastDate": "20 July 2026",
+    "slug": "mbbs-admission-2026",
+    "url": "../../data/admissions/post.html?admission=mbbs-admission-2026"
+  }
+]
