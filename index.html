@@ -1,42 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sarkari Networker - Latest Government Jobs, Results, Admit Card & Admissions</title>
 
-<meta name="description" content="Sarkari Networker provides latest government jobs, Sarkari Result, Admit Card, Answer Key, Admissions, Internship, Notes and recruitment updates. Get fast and accurate Sarkari Naukri notifications across India.">
+<meta name="description" content="Sarkari Networker provides latest government jobs, Sarkari Result, Admit Card, Answer Key, Admissions, Internship, Notes and recruitment updates.">
 
-<meta name="keywords" content="Sarkari Networker, Sarkari Result, Government Jobs 2026, Latest Jobs, Admit Card, Answer Key, Admissions, Sarkari Naukri, Recruitment 2026, Free Job Alert, Result Updates, Internship, Exam Notification">
+<meta name="keywords" content="Sarkari Networker, Sarkari Result, Government Jobs, Admit Card, Answer Key, Admissions, Sarkari Naukri, Recruitment, Free Job Alert">
 
-<meta property="og:title" content="Sarkari Networker - Latest Government Jobs, Results & Admit Card">
-
-<meta property="og:description" content="Find latest government jobs, Sarkari Result, Admit Card, Answer Key, Admissions and recruitment notifications from across India on Sarkari Networker.">
-
-<meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="Sarkari Networker - Latest Government Jobs, Results & Admit Card">
-
-<meta name="twitter:description" content="Get latest Sarkari Naukri updates, Results, Admit Cards, Admissions, Answer Keys and Exam Notifications at Sarkari Networker.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<link rel="stylesheet" href="src/Components/css/footer.css">
-<link rel="stylesheet" href="src/Components/css/navbar.css">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Sarkari Networker">
 <meta name="language" content="English">
-<meta name="revisit-after" content="1 days">
 <meta name="theme-color" content="#0f172a">
-<link rel="canonical" href="https://sarkarinetworker.com/">
-</head>
-<body>
 
+<meta property="og:title" content="Sarkari Networker - Latest Government Jobs, Results & Admit Card">
+<meta property="og:description" content="Find latest government jobs, Sarkari Result, Admit Card, Answer Key, Admissions and recruitment notifications.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sarkarinetworker.com/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sarkari Networker - Latest Government Jobs, Results & Admit Card">
+<meta name="twitter:description" content="Get latest Sarkari Naukri updates, Results, Admit Cards and Notifications.">
+
+<link rel="canonical" href="https://sarkarinetworker.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/src/Components/css/navbar.css">
+<link rel="stylesheet" href="/src/Components/css/footer.css">
+</head>
+
+<body>
 
 <div id="navbar"></div>
 <div id="search"></div>
-
 <section class="section">
 
 <h2 class="section-title">Quick Services</h2>
@@ -53,7 +57,7 @@
 <p>Check latest exam results.</p>
 </div>
 
-<div class="card"   onclick="window.location.href='/src/pages/admit-card/index.html'">
+<div class="card" onclick="window.location.href='/src/pages/admit-card/index.html'">
 <h3>🎫 Admit Card</h3>
 <p>Download admit cards.</p>
 </div>
@@ -64,8 +68,8 @@
 </div>
 
 <div class="card" onclick="window.location.href='/src/pages/admissions/index.html'">
-<h3>🏛 Admission</h3>
-<p>Latest admissions updates.</p>
+<h3>🏛 Admissions</h3>
+<p>Latest admission updates.</p>
 </div>
 
 <div class="card" onclick="window.location.href='/src/pages/alert/index.html'">
@@ -104,6 +108,7 @@
 <li>Bank Clerk Result</li>
 </ul>
 </div>
+
 <div class="box">
 <h3>Latest Answer Keys</h3>
 <ul>
@@ -114,102 +119,28 @@
 <li>Bank Clerk Answer Key</li>
 </ul>
 </div>
+
 <div class="box">
-<h3>Latest AdmitCard</h3>
+<h3>Latest Admit Cards</h3>
 <ul>
-<li onclick="alert('ok')">SSC Result 2026</li>
-<li>UPSC Final Result</li>
-<li>Railway Group D Result</li>
-<li>Police Exam Result</li>
-<li>Bank Clerk Result</li>
+<li>SSC Admit Card 2026</li>
+<li>UPSC Admit Card</li>
+<li>Railway Group D Admit Card</li>
+<li>Police Exam Admit Card</li>
+<li>Bank Clerk Admit Card</li>
 </ul>
 </div>
 
 </div>
 
 </section>
-<!-- Footer Container -->
+
+<!-- Footer -->
 <div id="footer"></div>
 
 <script>
-  
-fetch("src/Components/footer/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  })
-  .catch(error => console.error("Footer Load Error:", error));
 
-
-function toggleMenu(){
-document.getElementById("navLinks").classList.toggle("active");
-}
-
-
-
-/* Scroll Animation */
-
-const cards=document.querySelectorAll('.card');
-
-window.addEventListener('scroll',()=>{
-
-cards.forEach(card=>{
-
-let top=card.getBoundingClientRect().top;
-
-if(top<window.innerHeight-100){
-card.style.opacity='1';
-card.style.transform='translateY(0)';
-}
-
-});
-
-});
-
-cards.forEach(card=>{
-card.style.opacity='0';
-card.style.transform='translateY(50px)';
-card.style.transition='0.6s';
-});
-</script>
-
-<script>
-  
-
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("input", function() {
-
-    const searchText = this.value.toLowerCase().trim();
-
-    const items = document.querySelectorAll(".card, .box");
-
-    items.forEach(item => {
-
-        const text = item.textContent.toLowerCase();
-
-        if (text.includes(searchText)) {
-            item.style.display = "";
-        } else {
-            item.style.display = "none";
-        }
-
-    });
-
-});
-</script>
-
-
-
-
-
-
-
-
-<script>
-  
-
-
+// Navbar Load
 fetch("/src/Components/navbar/navbar.html")
   .then(response => response.text())
   .then(data => {
@@ -217,44 +148,90 @@ fetch("/src/Components/navbar/navbar.html")
   })
   .catch(error => console.error("Navbar Load Error:", error));
 
-
-</script>
-
-
-
-
-
-
-
-
-
-
-<script>
-
-
-fetch("src/Components/search/search.html")
+// Search Load
+fetch("/src/Components/search/search.html")
   .then(response => response.text())
   .then(data => {
+
     document.getElementById("search").innerHTML = data;
-  });
-</script>
 
-<script>
-  
+    const searchInput = document.getElementById("searchInput");
 
+    if (searchInput) {
 
-fetch("src/Components/navbar/navbar.html")
+      searchInput.addEventListener("input", function () {
+
+        const searchText = this.value.toLowerCase().trim();
+
+        const items = document.querySelectorAll(".card, .box");
+
+        items.forEach(item => {
+
+          const text = item.textContent.toLowerCase();
+
+          if (text.includes(searchText)) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+
+        });
+
+      });
+
+    }
+
+  })
+  .catch(error => console.error("Search Load Error:", error));
+
+// Footer Load
+fetch("/src/Components/footer/footer.html")
   .then(response => response.text())
   .then(data => {
-    document.getElementById("navbar").innerHTML = data;
+    document.getElementById("footer").innerHTML = data;
   })
-  .catch(error => console.error("Navbar Load Error:", error));
+  .catch(error => console.error("Footer Load Error:", error));
 
+
+// Mobile Menu
+function toggleMenu() {
+
+  const navLinks = document.getElementById("navLinks");
+
+  if (navLinks) {
+    navLinks.classList.toggle("active");
+  }
+
+}
+
+
+// Scroll Animation
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+  card.style.opacity = "0";
+  card.style.transform = "translateY(40px)";
+  card.style.transition = "all 0.6s ease";
+
+});
+
+window.addEventListener("scroll", () => {
+
+  cards.forEach(card => {
+
+    if (card.getBoundingClientRect().top < window.innerHeight - 100) {
+
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+
+    }
+
+  });
+
+});
 
 </script>
-
-
-
 
 </body>
 </html>
