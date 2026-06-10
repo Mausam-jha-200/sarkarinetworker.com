@@ -22,7 +22,12 @@
 
 <meta name="twitter:description" content="">
 
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/Components/css/footer.css">
+<link rel="stylesheet" href="/src/Components/css/navbar.css">
+
+
 
 <style>
 
@@ -579,7 +584,7 @@ Explore Jobs
 <div id="footer"></div>
 
 <script>
-fetch("../../components/footer/footer.html")
+fetch("/src/Components/footer/footer.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
@@ -593,7 +598,7 @@ fetch("../../components/footer/footer.html")
   
 
 
-fetch("../../components/navbar/navbar.html")
+fetch("/src/Components/navbar/navbar.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
