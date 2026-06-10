@@ -22,9 +22,9 @@
 <meta name="twitter:description" content="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
-<link rel="stylesheet" href="../../Components/css/footer.css">
-<link rel="stylesheet" href="../../Components/css/navbar.css">
-<link rel="stylesheet" href="../../Components/css/search.css">
+<link rel="stylesheet" href="src/Components/css/footer.css">
+<link rel="stylesheet" href="src/Components/css/navbar.css">
+<link rel="stylesheet" href="src/Components/css/search.css">
 </head>
 <body>
 
@@ -128,7 +128,7 @@
 
 <script>
   
-fetch("../../Components/footer/footer.html")
+fetch("src/Components/footer/footer.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
@@ -205,7 +205,7 @@ searchInput.addEventListener("input", function() {
   
 
 
-fetch("../../Components/navbar/navbar.html")
+fetch("src/Components/navbar/navbar.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
@@ -227,7 +227,7 @@ fetch("../../Components/navbar/navbar.html")
 <script>
 
 
-fetch("../../Components/search/search.html")
+fetch("src/Components/search/search.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("search").innerHTML = data;
@@ -238,7 +238,7 @@ fetch("../../Components/search/search.html")
   
 
 
-fetch("../../Components/navbar/navbar.html")
+fetch("src/Components/navbar/navbar.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
