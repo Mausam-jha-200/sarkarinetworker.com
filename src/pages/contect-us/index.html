@@ -23,9 +23,9 @@
 <meta name="twitter:description" content="">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../components/css/footer.css">
-<link rel="stylesheet" href="../../components/css/navbar.css">
-<link rel="stylesheet" href="../../components/css/search.css">
+<link rel="stylesheet" href="/src/Components/css/footer.css">
+<link rel="stylesheet" href="/src/Components/css/navbar.css">
+
 </head>
 
 <style>
@@ -456,7 +456,7 @@ Monday - Saturday
 
 <script>
   
-fetch("../../components/footer/footer.html")
+fetch("/src/Components/footer/footer.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
@@ -476,7 +476,7 @@ document.getElementById("navLinks").classList.toggle("active");
   
 
 
-fetch("../../components/navbar/navbar.html")
+fetch("/src/Components/navbar/navbar.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
