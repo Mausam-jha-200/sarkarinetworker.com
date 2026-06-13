@@ -13,10 +13,37 @@
   {
     "id": 2,
     "tag": "Railway",
-    "title": "Railway Technician Vacancy 2026",
+    "title": "Rrb Alp Technician Vacancy 2026",
     "qualification": "ITI",
-    "lastDate": "10 July 2026",
-    "posts": "6200",
-    "url": "../../data/job/post.html?job=railway-technician-2026"
+    "lastDate": "14 june 2026",
+    "posts": "11127",
+    "url": "/src/data/job/post.html?job=railway-rrb-alp-2026"
   }
+,
+
+   {
+    "id": 3,
+    "tag": "ssc cgl",
+    "title": "SSC CGL Recruitment 2026",
+    "qualification": "Graduate",
+    "lastDate": "22 June 2026",
+    "posts": "12256",
+    "url": "../../data/job/post.html?job=ssc-cgl-2026"
+  }
+,
+
+
+
+   {
+    "id": 4,
+    "tag": "upssc-lower-pcs",
+    "title": "UPSSSC Lower PCS Recruitment 2026",
+    "qualification": "Graduate",
+    "lastDate": "18 June 2026",
+    "posts": "2516",
+    "url": "../../data/job/post.html?job=upsssc-lower-pcs-2026"
+  }
+
+
+  
  ]
