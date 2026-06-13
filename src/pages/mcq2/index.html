@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sarkari Networker - SSC Exam</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<style>
+    /* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+:root{
+
+--primary:#007aff;
+--secondary:#5ac8fa;
+
+--success:#34c759;
+--warning:#ff9500;
+--danger:#ff3b30;
+
+--bg:#f5f7fa;
+--text:#1d1d1f;
+
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#f7f9fc,
+#eef4ff
+);
+
+color:var(--text);
+
+overflow-x:hidden;
+min-height:100vh;
+padding-bottom:120px;
+
+}
+
+/* AURORA */
+
+.aurora{
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,122,255,.20),
+transparent 70%
+);
+
+filter:blur(80px);
+
+top:-150px;
+left:-150px;
+
+z-index:-1;
+
+animation:float1 15s infinite ease-in-out;
+
+}
+
+.aurora2{
+
+right:-200px;
+left:auto;
+
+bottom:-200px;
+top:auto;
+
+background:
+radial-gradient(
+circle,
+rgba(90,200,250,.20),
+transparent 70%
+);
+
+animation:float2 18s infinite ease-in-out;
+
+}
+
+@keyframes float1{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(80px,60px);
+}
+
+100%{
+transform:translate(0,0);
+}
+
+}
+
+@keyframes float2{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(-100px,-60px);
+}
+
+100%{
+transform:translate(0,0);
+}
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+position:sticky;
+top:0;
+
+z-index:999;
+
+padding:18px 40px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:
+rgba(255,255,255,.65);
+
+backdrop-filter:
+blur(20px);
+
+border-bottom:
+1px solid rgba(255,255,255,.5);
+
+}
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+font-weight:800;
+font-size:20px;
+
+}
+
+.logo-circle{
+
+width:15px;
+height:15px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#007aff,
+#5ac8fa
+);
+
+}
+
+.exam-title{
+
+font-weight:700;
+font-size:18px;
+
+}
+
+.nav-right{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.timer{
+
+padding:12px 18px;
+
+background:
+linear-gradient(
+135deg,
+#007aff,
+#5ac8fa
+);
+
+color:white;
+
+border-radius:50px;
+
+font-weight:700;
+
+}
+
+.progress-counter{
+
+padding:12px 18px;
+
+background:white;
+
+border-radius:50px;
+
+box-shadow:
+0 10px 20px rgba(0,0,0,.06);
+
+}
+
+.profile img{
+
+width:40px;
+height:40px;
+
+border-radius:50%;
+
+}
+
+/* INFO CARD */
+
+.exam-info{
+
+max-width:1400px;
+margin:30px auto;
+
+padding:0 20px;
+
+}
+
+.info-card{
+
+background:
+rgba(255,255,255,.65);
+
+backdrop-filter:
+blur(20px);
+
+border-radius:24px;
+
+padding:25px;
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.info-item{
+
+text-align:center;
+
+}
+
+.info-item h4{
+
+color:#777;
+margin-bottom:8px;
+
+}
+
+.info-item p{
+
+font-size:22px;
+font-weight:700;
+
+}
+
+/* MAIN */
+
+.exam-layout{
+
+max-width:1400px;
+
+margin:auto;
+
+padding:20px;
+
+display:grid;
+
+grid-template-columns:
+75% 25%;
+
+gap:25px;
+
+}
+
+/* QUESTIONS */
+
+.questions-section{
+
+display:flex;
+flex-direction:column;
+gap:20px;
+
+}
+
+.question-card{
+
+display:none;
+
+background:
+rgba(255,255,255,.8);
+
+backdrop-filter:
+blur(20px);
+
+padding:30px;
+
+border-radius:24px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.08);
+
+animation:
+fadeUp .4s ease;
+
+}
+
+.question-card.active{
+
+display:block;
+
+}
+
+.question-card h3{
+
+font-size:22px;
+margin-bottom:25px;
+
+}
+
+.option{
+
+padding:18px;
+
+margin-bottom:12px;
+
+border-radius:18px;
+
+border:2px solid #e8e8e8;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.option:hover{
+
+border-color:
+var(--primary);
+
+background:
+#f0f7ff;
+
+}
+
+.option.selected{
+
+background:
+linear-gradient(
+135deg,
+#007aff,
+#5ac8fa
+);
+
+color:white;
+
+border:none;
+
+box-shadow:
+0 10px 30px rgba(0,122,255,.35);
+
+}
+
+/* PALETTE */
+
+.palette{
+
+position:sticky;
+top:100px;
+
+background:
+rgba(255,255,255,.75);
+
+backdrop-filter:
+blur(20px);
+
+padding:25px;
+
+border-radius:24px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+height:fit-content;
+
+}
+
+.palette h3{
+
+margin-bottom:20px;
+
+}
+
+.palette-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(5,1fr);
+
+gap:10px;
+
+}
+
+.palette-btn{
+
+height:48px;
+width:48px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:12px;
+
+background:#d1d5db;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.palette-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/* STATUS COLORS */
+
+.answered{
+
+background:#34c759 !important;
+
+}
+
+.review{
+
+background:#ff9500 !important;
+
+}
+
+.current{
+
+outline:
+3px solid #007aff;
+
+}
+
+.not-visited{
+
+background:#9ca3af;
+
+}
+
+/* PROGRESS */
+
+.progress-box{
+
+margin-top:25px;
+
+}
+
+.progress-bar{
+
+height:12px;
+
+background:#e5e7eb;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin:15px 0;
+
+}
+
+.progress-fill{
+
+height:100%;
+width:0;
+
+background:
+linear-gradient(
+90deg,
+#007aff,
+#5ac8fa
+);
+
+transition:.4s;
+
+}
+
+/* ACTION BAR */
+
+.action-bar{
+
+position:fixed;
+
+bottom:0;
+left:0;
+
+width:100%;
+
+padding:15px;
+
+background:
+rgba(255,255,255,.8);
+
+backdrop-filter:
+blur(20px);
+
+display:flex;
+justify-content:center;
+gap:12px;
+
+border-top:
+1px solid rgba(255,255,255,.5);
+
+z-index:999;
+
+}
+
+.btn{
+
+border:none;
+
+padding:14px 22px;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+.primary{
+
+background:#007aff;
+color:white;
+
+}
+
+.secondary{
+
+background:#eef4ff;
+color:#007aff;
+
+}
+
+.warning{
+
+background:#ff9500;
+color:white;
+
+}
+
+.danger{
+
+background:#ff3b30;
+color:white;
+
+}
+
+/* RESULT MODAL */
+
+.result-modal{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.6);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+}
+
+.result-card{
+
+width:400px;
+
+background:white;
+
+padding:40px;
+
+border-radius:24px;
+
+text-align:center;
+
+}
+
+.result-card h1{
+
+font-size:50px;
+
+margin:20px 0;
+
+}
+
+.result-card button{
+
+margin-top:20px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:15px;
+
+background:#007aff;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+/* DARK MODE */
+
+.dark-mode{
+
+background:
+linear-gradient(
+180deg,
+#0a0a0a,
+#111827,
+#1f2937
+);
+
+color:white;
+
+}
+
+.dark-mode .navbar,
+.dark-mode .palette,
+.dark-mode .question-card,
+.dark-mode .info-card{
+
+background:
+rgba(20,20,20,.75);
+
+color:white;
+
+}
+
+.dark-mode .option{
+
+border-color:
+rgba(255,255,255,.12);
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.exam-layout{
+
+grid-template-columns:
+1fr;
+
+}
+
+.palette{
+
+position:relative;
+top:0;
+
+}
+
+.info-card{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.exam-title{
+
+display:none;
+
+}
+
+.navbar{
+
+padding:15px;
+
+}
+
+.action-bar{
+
+overflow-x:auto;
+
+justify-content:flex-start;
+
+}
+
+.btn{
+
+min-width:120px;
+
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<!-- APPLE BACKGROUND -->
+
+<div class="aurora"></div>
+<div class="aurora aurora2"></div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<div class="logo-circle"></div>
+
+<span>Sarkari Networker</span>
+
+</div>
+
+<div class="exam-title">
+SSC CGL 2026
+</div>
+
+<div class="nav-right">
+
+<div class="timer" id="timer">
+02:00:00
+</div>
+
+<div class="progress-counter" id="progressCounter">
+0 / 10
+</div>
+
+<div class="profile">
+
+<img
+src="https://ui-avatars.com/api/?name=User"
+alt=""
+>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- EXAM INFO -->
+
+<section class="exam-info">
+
+<div class="info-card">
+
+<div class="info-item">
+
+<h4>Exam</h4>
+
+<p>SSC CGL 2026</p>
+
+</div>
+
+<div class="info-item">
+
+<h4>Total Questions</h4>
+
+<p>10</p>
+
+</div>
+
+<div class="info-item">
+
+<h4>Total Marks</h4>
+
+<p>20</p>
+
+</div>
+
+<div class="info-item">
+
+<h4>Negative</h4>
+
+<p>0.50</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MAIN LAYOUT -->
+
+<div class="exam-layout">
+
+<!-- QUESTIONS -->
+
+<div class="questions-section">
+
+<!-- QUESTION 1 -->
+
+<div class="question-card active">
+
+<h3>
+Q1. Which of the following is the capital of India?
+</h3>
+
+<div class="option">Mumbai</div>
+<div class="option">Delhi</div>
+<div class="option">Kolkata</div>
+<div class="option">Chennai</div>
+
+</div>
+
+<!-- QUESTION 2 -->
+
+<div class="question-card">
+
+<h3>
+Q2. Constitution of India came into force on?
+</h3>
+
+<div class="option">15 August 1947</div>
+<div class="option">26 January 1950</div>
+<div class="option">26 November 1949</div>
+<div class="option">2 October 1947</div>
+
+</div>
+
+<!-- QUESTION 3 -->
+
+<div class="question-card">
+
+<h3>
+Q3. Father of the Nation?
+</h3>
+
+<div class="option">Jawaharlal Nehru</div>
+<div class="option">Mahatma Gandhi</div>
+<div class="option">Sardar Patel</div>
+<div class="option">Subhash Bose</div>
+
+</div>
+
+<!-- QUESTION 4 -->
+
+<div class="question-card">
+
+<h3>
+Q4. National Animal of India?
+</h3>
+
+<div class="option">Lion</div>
+<div class="option">Tiger</div>
+<div class="option">Elephant</div>
+<div class="option">Leopard</div>
+
+</div>
+
+<!-- QUESTION 5 -->
+
+<div class="question-card">
+
+<h3>
+Q5. Largest Democracy in the world?
+</h3>
+
+<div class="option">USA</div>
+<div class="option">China</div>
+<div class="option">India</div>
+<div class="option">Russia</div>
+
+</div>
+
+<!-- QUESTION 6 -->
+
+<div class="question-card">
+
+<h3>
+Q6. Currency of India?
+</h3>
+
+<div class="option">Dollar</div>
+<div class="option">Euro</div>
+<div class="option">Rupee</div>
+<div class="option">Yen</div>
+
+</div>
+
+<!-- QUESTION 7 -->
+
+<div class="question-card">
+
+<h3>
+Q7. Who wrote National Anthem?
+</h3>
+
+<div class="option">Premchand</div>
+<div class="option">Tagore</div>
+<div class="option">Gandhi</div>
+<div class="option">Nehru</div>
+
+</div>
+
+<!-- QUESTION 8 -->
+
+<div class="question-card">
+
+<h3>
+Q8. First Prime Minister of India?
+</h3>
+
+<div class="option">Patel</div>
+<div class="option">Nehru</div>
+<div class="option">Bose</div>
+<div class="option">Rajendra Prasad</div>
+
+</div>
+
+<!-- QUESTION 9 -->
+
+<div class="question-card">
+
+<h3>
+Q9. National Bird of India?
+</h3>
+
+<div class="option">Peacock</div>
+<div class="option">Parrot</div>
+<div class="option">Crow</div>
+<div class="option">Sparrow</div>
+
+</div>
+
+<!-- QUESTION 10 -->
+
+<div class="question-card">
+
+<h3>
+Q10. Largest State of India?
+</h3>
+
+<div class="option">UP</div>
+<div class="option">MP</div>
+<div class="option">Rajasthan</div>
+<div class="option">Maharashtra</div>
+
+</div>
+
+</div>
+
+<!-- PALETTE -->
+
+<aside class="palette">
+
+<h3>Question Palette</h3>
+
+<div class="palette-grid">
+
+<div class="palette-btn">1</div>
+<div class="palette-btn">2</div>
+<div class="palette-btn">3</div>
+<div class="palette-btn">4</div>
+<div class="palette-btn">5</div>
+<div class="palette-btn">6</div>
+<div class="palette-btn">7</div>
+<div class="palette-btn">8</div>
+<div class="palette-btn">9</div>
+<div class="palette-btn">10</div>
+
+</div>
+
+<div class="progress-box">
+
+<h4>Exam Progress</h4>
+
+<div class="progress-bar">
+
+<div class="progress-fill" id="progressFill"></div>
+
+</div>
+
+<p id="attemptedText">
+0 Questions Attempted
+</p>
+
+</div>
+
+</aside>
+
+</div>
+
+<!-- ACTION BAR -->
+
+<div class="action-bar">
+
+<button id="prevBtn" class="btn secondary">
+Previous
+</button>
+
+<button id="nextBtn" class="btn primary">
+Save & Next
+</button>
+
+<button id="reviewBtn" class="btn warning">
+Mark Review
+</button>
+
+<button id="clearBtn" class="btn danger">
+Clear
+</button>
+
+<button id="darkBtn" class="btn secondary">
+Dark Mode
+</button>
+
+<button id="submitBtn" class="btn primary">
+Submit
+</button>
+
+</div>
+
+<!-- RESULT MODAL -->
+
+<div class="result-modal" id="resultModal">
+
+<div class="result-card">
+
+<h2>Exam Result</h2>
+
+<h1 id="scoreText">
+0
+</h1>
+
+<p id="correctText">
+Correct : 0
+</p>
+
+<p id="wrongText">
+Wrong : 0
+</p>
+
+<p id="accuracyText">
+Accuracy : 0%
+</p>
+
+<button onclick="location.reload()">
+Restart Exam
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+
+    // =========================
+// SARKARI NETWORKER CBT ENGINE
+// =========================
+
+const questionCards =
+document.querySelectorAll(".question-card");
+
+const paletteBtns =
+document.querySelectorAll(".palette-btn");
+
+const options =
+document.querySelectorAll(".option");
+
+const prevBtn =
+document.getElementById("prevBtn");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+const reviewBtn =
+document.getElementById("reviewBtn");
+
+const clearBtn =
+document.getElementById("clearBtn");
+
+const darkBtn =
+document.getElementById("darkBtn");
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+const timer =
+document.getElementById("timer");
+
+const progressCounter =
+document.getElementById("progressCounter");
+
+const progressFill =
+document.getElementById("progressFill");
+
+const attemptedText =
+document.getElementById("attemptedText");
+
+const resultModal =
+document.getElementById("resultModal");
+
+const scoreText =
+document.getElementById("scoreText");
+
+const correctText =
+document.getElementById("correctText");
+
+const wrongText =
+document.getElementById("wrongText");
+
+const accuracyText =
+document.getElementById("accuracyText");
+
+// =========================
+// ANSWERS
+// =========================
+
+const correctAnswers = [
+1, // Delhi
+1, // 26 Jan 1950
+1, // Gandhi
+1, // Tiger
+2, // India
+2, // Rupee
+1, // Tagore
+1, // Nehru
+0, // Peacock
+2  // Rajasthan
+];
+
+let currentQuestion = 0;
+
+let answers =
+JSON.parse(
+localStorage.getItem(
+"sscAnswers"
+)
+) || {};
+
+let reviewQuestions =
+JSON.parse(
+localStorage.getItem(
+"sscReview"
+)
+) || [];
+
+// =========================
+// SHOW QUESTION
+// =========================
+
+function showQuestion(index){
+
+questionCards.forEach(card=>{
+
+card.classList.remove("active");
+
+});
+
+questionCards[index]
+.classList.add("active");
+
+paletteBtns.forEach(btn=>{
+
+btn.classList.remove(
+"current"
+);
+
+});
+
+paletteBtns[index]
+.classList.add(
+"current"
+);
+
+currentQuestion=index;
+
+}
+
+showQuestion(0);
+
+// =========================
+// OPTION SELECT
+// =========================
+
+questionCards.forEach(
+(card,qIndex)=>{
+
+const cardOptions =
+card.querySelectorAll(
+".option"
+);
+
+cardOptions.forEach(
+(option,optIndex)=>{
+
+option.addEventListener(
+"click",
+()=>{
+
+cardOptions.forEach(
+opt=>{
+
+opt.classList.remove(
+"selected"
+);
+
+});
+
+option.classList.add(
+"selected"
+);
+
+answers[qIndex] =
+optIndex;
+
+paletteBtns[qIndex]
+.classList.add(
+"answered"
+);
+
+localStorage.setItem(
+"sscAnswers",
+JSON.stringify(
+answers
+)
+);
+
+updateProgress();
+
+});
+
+});
+
+});
+
+// =========================
+// LOAD SAVED ANSWERS
+// =========================
+
+function loadAnswers(){
+
+Object.keys(
+answers
+).forEach(index=>{
+
+const card =
+questionCards[index];
+
+if(!card) return;
+
+const opts =
+card.querySelectorAll(
+".option"
+);
+
+opts[
+answers[index]
+]?.classList.add(
+"selected"
+);
+
+paletteBtns[index]
+.classList.add(
+"answered"
+);
+
+});
+
+}
+
+loadAnswers();
+
+// =========================
+// NEXT
+// =========================
+
+nextBtn.addEventListener(
+"click",
+()=>{
+
+if(
+currentQuestion <
+questionCards.length-1
+){
+
+showQuestion(
+currentQuestion+1
+);
+
+}
+
+});
+
+// =========================
+// PREVIOUS
+// =========================
+
+prevBtn.addEventListener(
+"click",
+()=>{
+
+if(
+currentQuestion > 0
+){
+
+showQuestion(
+currentQuestion-1
+);
+
+}
+
+});
+
+// =========================
+// PALETTE
+// =========================
+
+paletteBtns.forEach(
+(btn,index)=>{
+
+btn.addEventListener(
+"click",
+()=>{
+
+showQuestion(index);
+
+});
+
+});
+
+// =========================
+// REVIEW
+// =========================
+
+reviewBtn.addEventListener(
+"click",
+()=>{
+
+if(
+!reviewQuestions.includes(
+currentQuestion
+)
+){
+
+reviewQuestions.push(
+currentQuestion
+);
+
+paletteBtns[
+currentQuestion
+].classList.add(
+"review"
+);
+
+localStorage.setItem(
+"sscReview",
+JSON.stringify(
+reviewQuestions
+)
+);
+
+}
+
+});
+
+// =========================
+// LOAD REVIEW
+// =========================
+
+reviewQuestions.forEach(
+(index)=>{
+
+paletteBtns[index]
+.classList.add(
+"review"
+);
+
+});
+
+// =========================
+// CLEAR
+// =========================
+
+clearBtn.addEventListener(
+"click",
+()=>{
+
+delete answers[
+currentQuestion
+];
+
+const opts =
+questionCards[
+currentQuestion
+].querySelectorAll(
+".option"
+);
+
+opts.forEach(opt=>{
+
+opt.classList.remove(
+"selected"
+);
+
+});
+
+paletteBtns[
+currentQuestion
+].classList.remove(
+"answered"
+);
+
+localStorage.setItem(
+"sscAnswers",
+JSON.stringify(
+answers
+)
+);
+
+updateProgress();
+
+});
+
+// =========================
+// PROGRESS
+// =========================
+
+function updateProgress(){
+
+const attempted =
+Object.keys(
+answers
+).length;
+
+const total =
+questionCards.length;
+
+progressCounter.innerHTML =
+`${attempted}/${total}`;
+
+attemptedText.innerHTML =
+`${attempted} Questions Attempted`;
+
+progressFill.style.width =
+`${(attempted/total)*100}%`;
+
+}
+
+updateProgress();
+
+// =========================
+// DARK MODE
+// =========================
+
+darkBtn.addEventListener(
+"click",
+()=>{
+
+document.body.classList.toggle(
+"dark-mode"
+);
+
+});
+
+// =========================
+// TIMER
+// =========================
+
+let totalSeconds =
+7200;
+
+const savedTime =
+localStorage.getItem(
+"sscTime"
+);
+
+if(savedTime){
+
+totalSeconds =
+parseInt(savedTime);
+
+}
+
+setInterval(()=>{
+
+let hrs =
+Math.floor(
+totalSeconds/3600
+);
+
+let mins =
+Math.floor(
+(totalSeconds%3600)/60
+);
+
+let secs =
+totalSeconds%60;
+
+timer.innerHTML =
+
+`${String(hrs)
+.padStart(2,"0")}
+:
+${String(mins)
+.padStart(2,"0")}
+:
+${String(secs)
+.padStart(2,"0")}`;
+
+localStorage.setItem(
+"sscTime",
+totalSeconds
+);
+
+if(totalSeconds<=0){
+
+submitExam();
+
+}
+
+totalSeconds--;
+
+},1000);
+
+// =========================
+// SUBMIT EXAM
+// =========================
+
+submitBtn.addEventListener(
+"click",
+()=>{
+
+if(
+confirm(
+"Submit Exam?"
+)
+){
+
+submitExam();
+
+}
+
+});
+
+// =========================
+// RESULT
+// =========================
+
+function submitExam(){
+
+let correct = 0;
+
+let wrong = 0;
+
+Object.keys(
+answers
+).forEach(index=>{
+
+if(
+answers[index] ==
+correctAnswers[index]
+){
+
+correct++;
+
+}
+else{
+
+wrong++;
+
+}
+
+});
+
+const score =
+(correct*2)
+-
+(wrong*0.50);
+
+const accuracy =
+(
+(correct/
+(correct+wrong || 1)
+)*100
+).toFixed(2);
+
+scoreText.innerHTML =
+score;
+
+correctText.innerHTML =
+`Correct : ${correct}`;
+
+wrongText.innerHTML =
+`Wrong : ${wrong}`;
+
+accuracyText.innerHTML =
+`Accuracy : ${accuracy}%`;
+
+resultModal.style.display =
+"flex";
+
+localStorage.removeItem(
+"sscAnswers"
+);
+
+localStorage.removeItem(
+"sscReview"
+);
+
+localStorage.removeItem(
+"sscTime"
+);
+
+}
+
+// =========================
+// FULL SCREEN
+// =========================
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+document.documentElement
+.requestFullscreen?.();
+
+});
+
+// =========================
+// TAB CHANGE WARNING
+// =========================
+
+document.addEventListener(
+"visibilitychange",
+()=>{
+
+if(
+document.hidden
+){
+
+alert(
+"Warning: Tab Switching Detected!"
+);
+
+}
+
+});
+    </script>
+
+
+</body>
+</html>

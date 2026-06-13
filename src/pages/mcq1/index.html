@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarkari Networker MCQ Practice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Inter',sans-serif;
+    color:#111827;
+    overflow-x:hidden;
+    position:relative;
+
+    background:
+    radial-gradient(circle at 10% 20%, rgba(99,102,241,.25), transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(59,130,246,.20), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(168,85,247,.18), transparent 35%),
+    radial-gradient(circle at 20% 90%, rgba(14,165,233,.15), transparent 35%),
+    linear-gradient(
+        135deg,
+        #f8fafc 0%,
+        #eef2ff 25%,
+        #f8fafc 50%,
+        #ecfeff 75%,
+        #ffffff 100%
+    );
+
+    background-attachment:fixed;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:-200px;
+    z-index:-2;
+
+    background:
+    radial-gradient(circle,#6366f1 0%,transparent 40%),
+    radial-gradient(circle,#3b82f6 0%,transparent 40%),
+    radial-gradient(circle,#8b5cf6 0%,transparent 40%);
+
+    filter:blur(120px);
+    opacity:.35;
+
+    animation:aurora 18s ease-in-out infinite alternate;
+}
+
+@keyframes aurora{
+    0%{
+        transform:translate(-10%,-10%) scale(1);
+    }
+    100%{
+        transform:translate(10%,10%) scale(1.2);
+    }
+}
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.75);
+border-bottom:1px solid rgba(255,255,255,.4);
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+}
+
+.exam-info{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.progress-pill{
+background:#fff;
+padding:10px 18px;
+border-radius:999px;
+font-weight:600;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* LAYOUT */
+
+.wrapper{
+display:grid;
+grid-template-columns:280px 1fr;
+gap:25px;
+padding:30px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+background:rgba(255,255,255,.6);
+backdrop-filter:blur(20px);
+padding:25px;
+border-radius:28px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+height:fit-content;
+position:sticky;
+top:100px;
+}
+
+.sidebar h3{
+margin-bottom:18px;
+}
+
+.palette{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+}
+
+.palette button{
+height:45px;
+border:none;
+border-radius:14px;
+cursor:pointer;
+font-weight:700;
+background:#eef2ff;
+}
+
+.visited{
+background:#22c55e !important;
+color:white;
+}
+
+.review{
+background:#f59e0b !important;
+color:white;
+}
+
+/* MAIN */
+
+.main{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+/* QUESTION CARD */
+
+.card{
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(20px);
+padding:28px;
+border-radius:28px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+margin-bottom:18px;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.badges{
+display:flex;
+gap:10px;
+}
+
+.badge{
+padding:8px 14px;
+border-radius:999px;
+font-size:13px;
+font-weight:700;
+}
+
+.easy{
+background:#dcfce7;
+color:#166534;
+}
+
+.subject{
+background:#dbeafe;
+color:#1d4ed8;
+}
+
+.question{
+font-size:20px;
+font-weight:700;
+margin-bottom:22px;
+line-height:1.6;
+}
+
+.options{
+display:grid;
+gap:14px;
+}
+
+.option{
+padding:16px;
+border-radius:18px;
+border:2px solid #e5e7eb;
+cursor:pointer;
+transition:.3s;
+font-weight:500;
+}
+
+.option:hover{
+border-color:#6366f1;
+background:#eef2ff;
+}
+
+.option.selected{
+background:#dcfce7;
+border-color:#22c55e;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.stat{
+background:white;
+padding:22px;
+text-align:center;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.stat h2{
+font-size:28px;
+margin-bottom:5px;
+}
+
+/* BOTTOM BAR */
+
+.bottom-bar{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:900px;
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(20px);
+padding:15px;
+border-radius:28px;
+display:flex;
+justify-content:space-between;
+gap:10px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.btn{
+flex:1;
+padding:15px;
+border:none;
+border-radius:18px;
+cursor:pointer;
+font-weight:700;
+font-size:15px;
+transition:.3s;
+}
+
+.primary{
+background:#111827;
+color:white;
+}
+
+.secondary{
+background:#f3f4f6;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.wrapper{
+grid-template-columns:1fr;
+}
+
+.sidebar{
+display:none;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.question{
+font-size:18px;
+}
+
+header{
+padding:15px;
+}
+
+.logo{
+font-size:18px;
+}
+
+.exam-info{
+gap:10px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+Sarkari Networker
+</div>
+
+<div class="exam-info">
+<div class="progress-pill">SSC CGL 2026</div>
+<div class="progress-pill">68% Complete</div>
+</div>
+
+</header>
+
+<div class="wrapper">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h3>Question Palette</h3>
+
+<div class="palette">
+<button class="visited">1</button>
+<button class="visited">2</button>
+<button class="review">3</button>
+<button>4</button>
+<button>5</button>
+<button>6</button>
+<button>7</button>
+<button>8</button>
+<button>9</button>
+<button>10</button>
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="stats">
+
+<div class="stat">
+<h2>18</h2>
+<p>Attempted</p>
+</div>
+
+<div class="stat">
+<h2>15</h2>
+<p>Correct</p>
+</div>
+
+<div class="stat">
+<h2>3</h2>
+<p>Wrong</p>
+</div>
+
+<div class="stat">
+<h2>12</h2>
+<p>Remaining</p>
+</div>
+
+</div>
+
+<!-- QUESTION 1 -->
+
+<div class="card">
+
+<div class="top">
+
+<h3>Q1</h3>
+
+<div class="badges">
+<span class="badge easy">Easy</span>
+<span class="badge subject">Polity</span>
+</div>
+
+</div>
+
+<div class="question">
+भारत का संविधान कब लागू हुआ?
+</div>
+
+<div class="options">
+
+<div class="option">26 जनवरी 1950</div>
+<div class="option">15 अगस्त 1947</div>
+<div class="option">26 जनवरी 1949</div>
+<div class="option">15 अगस्त 1950</div>
+
+</div>
+
+</div>
+
+<!-- QUESTION 2 -->
+
+<div class="card">
+
+<div class="top">
+
+<h3>Q2</h3>
+
+<div class="badges">
+<span class="badge easy">Easy</span>
+<span class="badge subject">GK</span>
+</div>
+
+</div>
+
+<div class="question">
+भारत का राष्ट्रीय पशु कौन है?
+</div>
+
+<div class="options">
+
+<div class="option">हाथी</div>
+<div class="option selected">बाघ</div>
+<div class="option">शेर</div>
+<div class="option">मोर</div>
+
+</div>
+
+</div>
+
+<!-- QUESTION 3 -->
+
+<div class="card">
+
+<div class="top">
+
+<h3>Q3</h3>
+
+<div class="badges">
+<span class="badge easy">Medium</span>
+<span class="badge subject">Sports</span>
+</div>
+
+</div>
+
+<div class="question">
+भारत का राष्ट्रीय खेल कौन सा माना जाता है?
+</div>
+
+<div class="options">
+
+<div class="option">क्रिकेट</div>
+<div class="option">हॉकी</div>
+<div class="option">फुटबॉल</div>
+<div class="option">कबड्डी</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTTOM ACTION BAR -->
+
+<div class="bottom-bar">
+
+<button class="btn secondary">Previous</button>
+
+<button class="btn secondary">
+Mark Review
+</button>
+
+<button class="btn secondary">
+Save Progress
+</button>
+
+<button class="btn primary">
+Next
+</button>
+
+</div>
+
+<script>
+
+document.querySelectorAll('.option').forEach(option=>{
+
+option.addEventListener('click',()=>{
+
+let parent=option.parentElement;
+
+parent.querySelectorAll('.option').forEach(o=>{
+o.classList.remove('selected');
+});
+
+option.classList.add('selected');
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+
